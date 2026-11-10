@@ -1,0 +1,5 @@
+# Install in the backend virtual environment after requirements-lock.txt.
+langgraph-cli[inmem]==0.4.40
+langgraph-api==0.16.6
+langgraph-runtime-inmem==0.36.7
+debugpy==1.8.22

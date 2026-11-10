@@ -1,0 +1,59 @@
+{
+  "name": "idol-knowledge-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Idol · 本地知识工作台",
+  "author": "Idol",
+  "type": "module",
+  "main": "dist-desktop/main.cjs",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "studio": "node scripts/studio.mjs",
+    "studio:debug": "node scripts/studio.mjs --debug-port 5678 --no-reload",
+    "build:desktop": "node scripts/build-desktop.mjs",
+    "typecheck": "vue-tsc --noEmit -p frontend/tsconfig.json && tsc --noEmit -p desktop/tsconfig.json",
+    "build": "npm run typecheck && npm run build:desktop && vite build --config frontend/vite.config.ts",
+    "dist:win": "npm run build && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "dompurify": "^3.3.0",
+    "lucide-vue-next": "^0.468.0",
+    "marked": "^17.0.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "electron": "^45.0.0",
+    "electron-builder": "^26.0.0",
+    "esbuild": "^0.25.0",
+    "prettier": "^3.9.10",
+    "typescript": "^5.9.0",
+    "vite": "^7.2.0",
+    "vue-tsc": "^3.1.0"
+  },
+  "build": {
+    "appId": "com.idol.knowledge",
+    "productName": "Idol",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist-desktop/**",
+      "dist-frontend/**"
+    ],
+    "extraResources": [
+      {
+        "from": "backend/dist/idol-backend",
+        "to": "backend"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
