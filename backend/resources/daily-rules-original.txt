@@ -1,0 +1,17 @@
+每一段代表了抓取的主题、配额，标题括号里数字含义为每日页面配额、每日chunk配额;仅从下面的白名单网站抓取，不允许扩散
+ai(20,200)：P0主线，Agent、RAG、向量库、评测、国产大模型
+音视频(5,50):P1，WebRTC、H264、H265、HLS、FLV、实时流媒体、Electron音视频
+java后端(5,50):P2，SpringBoot、中间件、后端架构
+前端(5,50):P3轻度跟进，Vue/React/Electron/Uniapp/ReactNative，配额严格限制，避免信息过载
+社区文章：非大厂官方团队账号发布的实践、踩坑、教程；营销广告、引流课程、面试刷题水文直接丢弃。
+
+社区：
+https://juejin.cn
+https://zhihu.com
+https://blog.csdn.net
+https://cloud.tencent.com/developer
+
+技术团队：
+tech.meituan.com
+web.toutiao.com/c/user/token/MS4wLjABAAAAVKlHQZBJGZmdsWK7YD2J35tCaIoSsZnMTKNkAzw6qEE/?wid=1792914114026&tab=all
+
